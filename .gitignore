@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.vscode/
+
+# Datos de Subtel (shapefiles): no se suben, ver README
+data/*
+!data/.gitkeep

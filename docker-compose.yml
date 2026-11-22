@@ -1,0 +1,14 @@
+services:
+  db:
+    image: pgrouting/pgrouting:16-3.5-3.8
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: yafun
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./data:/data
+      - ./sql:/sql
+volumes:
+  pgdata:

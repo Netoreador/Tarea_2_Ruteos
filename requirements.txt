@@ -1,0 +1,7 @@
+numpy
+pandas
+scipy
+geopandas
+sqlalchemy
+psycopg2-binary
+geoalchemy2
