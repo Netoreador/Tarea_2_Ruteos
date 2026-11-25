@@ -3,7 +3,9 @@ __pycache__/
 .venv/
 .env
 .vscode/
-
-# Datos de Subtel (shapefiles): no se suben, ver README
-data/*
-!data/.gitkeep
+.DS_Store
+salida/
+salida_main.txt
+contexto.md
+contexto_tarea2.md
+*.pdf

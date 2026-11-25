@@ -1,14 +1,20 @@
+name: ti2-yafun
+
 services:
   db:
-    image: pgrouting/pgrouting:16-3.5-3.8
+    image: pgrouting/pgrouting:16-3.5-3.8.0
+    platform: linux/amd64
+    container_name: ti2-yafun-db
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: yafun
     ports:
-      - "5432:5432"
+      - "5440:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
-      - ./data:/data
-      - ./sql:/sql
-volumes:
-  pgdata:
+      - ./sql:/sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d yafun"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
